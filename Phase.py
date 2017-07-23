@@ -110,6 +110,17 @@ def drawPhasor(phasorList):
         axisArea[2] = min(ph.y, axisArea[2])
         axisArea[3] = max(ph.y, axisArea[3])
 
+        # 将坐标轴最大最小值设置为相反数，保持零点在坐标轴中心
+        if abs(float(axisArea[0])) != 0:
+            axisArea[1] = -float(axisArea[0])
+        else:
+            axisArea[0] = -float(axisArea[1])
+
+        if abs(float(axisArea[2])) != 0:
+            axisArea[3] = -float(axisArea[2])
+        else:
+            axisArea[2] = -float(axisArea[3])
+
         pX = [0, ph.x]
         pY = [0, ph.y]
         plotList.append(ax.plot(pX,pY,'-',label=ph.name))
