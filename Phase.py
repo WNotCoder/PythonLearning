@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pylab import *
 
+import logging
+logging.basicConfig(level=logging.INFO)
+
 
 #极坐标转换为常规坐标
 def convToNorm(radi,phase):
@@ -92,9 +95,9 @@ def drawPhasor(phasorList):
 
     #设置坐标轴刻度
     xmajorLocator = MultipleLocator(20)    #设置x轴主刻度
-    xminorLocator   = MultipleLocator(5)    #设置x轴次刻度
+    xminorLocator = MultipleLocator(5)    #设置x轴次刻度
     ymajorLocator = MultipleLocator(20)
-    yminorLocator   = MultipleLocator(5)
+    yminorLocator = MultipleLocator(5)
     ax.xaxis.set_major_locator(xmajorLocator)    #执行之前的设置
     ax.xaxis.set_minor_locator(xminorLocator)
     ax.yaxis.set_major_locator(ymajorLocator)
@@ -121,6 +124,7 @@ def drawPhasor(phasorList):
         else:
             axisArea[2] = -float(axisArea[3])
 
+        #绘制相量
         pX = [0, ph.x]
         pY = [0, ph.y]
         plotList.append(ax.plot(pX,pY,'-',label=ph.name))
@@ -161,4 +165,5 @@ uc = Phasor('plr',57.7,120,'uc')
 phasorList = [ua,ub,uc]
 drawPhasor(phasorList)
 '''
+
 
