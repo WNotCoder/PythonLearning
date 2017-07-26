@@ -24,7 +24,7 @@ def convToPolar(x,y):
         radi = x
         phase = 90
     else:
-        radi = round(math.sqrt((x**x)+(y**y)),3)
+        radi = round(math.sqrt((x**2)+(y**2)),3)
         phase = round((math.atan(float(x)/float(y))*180/math.pi),3)
 
     return radi,phase
