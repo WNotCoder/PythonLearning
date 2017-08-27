@@ -32,4 +32,8 @@ for files in allFiles:
     elif oprtMode == "move":
         shutil.move(files, destPath)
 
+#TODO 增加进度条显示
+#FIXME 如果文件夹内有重名文件，移动后会导致后入重名文件覆盖先入重名文件
+#TODO 增加按照关键字复制移动功能
+#TODO 增加按照正则表达式复制移动功能
 
